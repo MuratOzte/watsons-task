@@ -5,6 +5,7 @@
     <Newsletter />
     <Banner />
     <Categories />
+    <Footer />
 </template>
 
 <script setup></script>
