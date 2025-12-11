@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <br><br><br><br>
+    <br /><br /><br /><br />
 </template>
 
 <style scoped>
@@ -21,17 +21,17 @@
     display: flex;
     justify-content: center;
 }
-.container{
+.container {
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 40px;
 }
-.left-side{
+.left-side {
     flex: 1;
 }
-.right-side{
+.right-side {
     flex: 1;
     display: flex;
     justify-content: end;
@@ -39,36 +39,46 @@
     height: 48px;
 }
 
-h1{
+h1 {
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    color: #2A2A48;
+    color: #2a2a48;
     margin-bottom: 16px;
 }
-p{
+p {
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
-    color: #2A2A4899;
+    color: #2a2a4899;
 }
-input{
-    border: 1px solid #ECECEC;
+input {
+    border: 1px solid #ececec;
     border-radius: 4px;
     padding: 16px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+    flex: 1;
 }
 
-input::placeholder{
+input::placeholder {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #2A2A4899;
+    color: #2a2a4899;
 }
-button{
-    background-color: #FF27AD;
+button {
+    background-color: #ff27ad;
     border-radius: 4px;
     padding: 0 16px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle; 
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
-
 </style>

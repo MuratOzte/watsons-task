@@ -78,6 +78,7 @@ const props = defineProps({
     width: 80%;
     height: 100%;
     display: flex;
+    align-items: center;
 }
 .text-section {
     width: 50%;
