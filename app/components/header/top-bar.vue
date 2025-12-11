@@ -32,6 +32,7 @@
     </div>
 </template>
 
+
 <style>
 .top-bar {
     width: 100%;

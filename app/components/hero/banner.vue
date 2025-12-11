@@ -2,30 +2,70 @@
     <div class="banner">
         <div class="container">
             <div class="text-section">
-                <h3 class="caps-title">Naturals By Watsons</h3>
-                <h1 class="title">The New 2021 collection</h1>
+                <h3 class="caps-title">
+                    {{ capsTitle }}
+                </h3>
+                <h1 class="title">
+                    {{ title }}
+                </h1>
                 <p class="paragraph">
-                    Known as "the miracle plant", Aloe Vera helps to nourish,
-                    moisturize and keep the hair looking smooth. Let your hair
-                    be flexible and fresh.
+                    {{ paragraph }}
                 </p>
-                <button class="shop-btn">Shop Now</button>
-                <div class="progress-bar" >
-                    <div class="progress active"></div>
-                    <div class="progress"></div>
-                    <div class="progress"></div>
+                <button class="shop-btn">
+                    {{ buttonText }}
+                </button>
+                <div class="progress-bar">
+                    <div
+                        v-for="n in totalSlides"
+                        :key="n"
+                        :class="['progress', { active: n - 1 === activeIndex }]"
+                    ></div>
                 </div>
             </div>
+
             <div class="img-section">
-                <img
-                    src="/assets/images/hero/right-part.png"
-                    alt="product-hero"
-                    class="right-part-image"
-                />
+                <img :src="imageSrc" :alt="imageAlt" class="right-part-image" />
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+const props = defineProps({
+    capsTitle: {
+        type: String,
+        default: 'Naturals By Watsons',
+    },
+    title: {
+        type: String,
+        required: true,
+    },
+    paragraph: {
+        type: String,
+        required: true,
+    },
+    imageSrc: {
+        type: String,
+        required: true,
+    },
+    imageAlt: {
+        type: String,
+        default: 'product-hero',
+    },
+    buttonText: {
+        type: String,
+        default: 'Shop Now',
+    },
+    activeIndex: {
+        type: Number,
+        default: 0,
+    },
+    totalSlides: {
+        type: Number,
+        default: 3,
+    },
+});
+</script>
 
 <style scoped>
 .banner {
@@ -37,6 +77,7 @@
 .container {
     width: 80%;
     height: 100%;
+    display: flex;
 }
 .text-section {
     width: 50%;
@@ -77,29 +118,29 @@
     font-size: 14px;
     cursor: pointer;
 }
-.progress-bar{
+.progress-bar {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-top: 40px;
 }
-
-.progress{
-    background-color: #8493A866;
+.progress {
+    background-color: #8493a866;
     width: 6px;
     height: 6px;
     border-radius: 3px;
     cursor: pointer;
 }
-
-.progress.active{
+.progress.active {
     background-color: #505357;
     width: 8px;
     height: 8px;
     border-radius: 4px;
     cursor: pointer;
 }
-.right-part-image{
+.right-part-image {
+    width: 100%;
+    height: 100%;
     object-fit: fill;
 }
 </style>
