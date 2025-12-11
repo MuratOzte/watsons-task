@@ -1,9 +1,10 @@
 <template>
-    <Header></Header>
-    <Hero></Hero>
+    <Header />
+    <Hero />
+    <Products />
+    <Newsletter />
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped></style>

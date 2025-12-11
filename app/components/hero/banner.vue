@@ -105,6 +105,7 @@ const props = defineProps({
     font-size: 16px;
     line-height: 24px;
     color: #485363;
+    margin: 16px 0px;
 }
 .shop-btn {
     padding: 8px 16px;

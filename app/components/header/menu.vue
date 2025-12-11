@@ -46,8 +46,11 @@ const menuItems = [
 
 .menu-link {
     text-decoration: none;
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     font-weight: 700;
+    height: 40px;
     font-size: 14px;
     color: #2A2A48;
     line-height: 16px;

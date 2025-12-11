@@ -1,10 +1,10 @@
 <template>
     <div class="hero">
-        <button class="left-button" @click="prevSlide">
+        <button class="left-button" @click="prevSlide" :disabled="isFirstSlide">
             <img src="/assets/images/hero/left.svg" alt="hero-left-button" />
         </button>
 
-        <button class="right-button" @click="nextSlide">
+        <button class="right-button" @click="nextSlide" :disabled="isLastSlide" >
             <img src="/assets/images/hero/right.svg" alt="hero-right-button" />
         </button>
 
@@ -62,17 +62,22 @@ const currentIndex = ref(0);
 const direction = ref('next');
 const currentSlide = computed(() => slides[currentIndex.value]);
 
+const isFirstSlide = computed(() => currentIndex.value === 0);
+const isLastSlide = computed(() => currentIndex.value === slides.length - 1);
+
 const nextSlide = () => {
-    direction.value = 'next';
-    currentIndex.value = (currentIndex.value + 1) % slides.length;
+    if (!isLastSlide.value) {
+        direction.value = 'next';
+        currentIndex.value++;
+    }
 };
 
 const prevSlide = () => {
-    direction.value = 'prev';
-    currentIndex.value =
-        (currentIndex.value - 1 + slides.length) % slides.length;
+    if (!isFirstSlide.value) {
+        direction.value = 'prev';
+        currentIndex.value--;
+    }
 };
-
 
 </script>
 
@@ -81,6 +86,9 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+button:disabled img{
+    opacity: 0.5;
 }
 
 .hero {
@@ -117,7 +125,7 @@ button {
 .slide-left-leave-active,
 .slide-right-enter-active,
 .slide-right-leave-active {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .slide-left-enter-from {

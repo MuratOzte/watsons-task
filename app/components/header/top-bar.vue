@@ -33,7 +33,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .top-bar {
     width: 100%;
     background-color: #505357;
