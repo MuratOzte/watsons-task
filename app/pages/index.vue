@@ -4,6 +4,7 @@
     <Products />
     <Newsletter />
     <Banner />
+    <Categories />
 </template>
 
 <script setup></script>
