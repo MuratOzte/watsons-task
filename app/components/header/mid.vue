@@ -1,12 +1,12 @@
 <template>
     <div class="mid">
         <div class="container">
-            <img src="/assets/images/header/logo.svg" alt="logo" class="logo" />
+            <img src="/assets/icons/header/logo.svg" alt="logo" class="logo" />
 
             <div class="right-section">
                 <div class="search">
                     <img
-                        src="/assets/images/header/search.svg"
+                        src="/assets/icons/header/search.svg"
                         alt="search"
                         class="search-icon"
                     />
@@ -28,13 +28,13 @@
                         />
                     </button>
                     <button>
-                        <img src="/assets/images/header/down.svg" alt="menu" />
+                        <img src="/assets/icons/header/down.svg" alt="menu" />
                     </button>
                 </div>
                 <div class="divider"></div>
                 <button class="cart">
                     <img
-                        src="/assets/images/header/basket.svg"
+                        src="/assets/icons/header/basket.svg"
                         alt="cart"
                         class="cart-icon"
                     />
@@ -44,11 +44,11 @@
 
             <div class="mobile-section">
                 <button @click="toggleMobileSearch">
-                    <img src="/assets/icons/search.svg" alt="search" />
+                    <img src="/assets/icons/header/search.svg" alt="search" />
                 </button>
                 <button class="cart">
                     <img
-                        src="/assets/images/header/basket.svg"
+                        src="/assets/icons/header/basket.svg"
                         alt="cart"
                         class="cart-icon"
                     />
@@ -64,7 +64,7 @@
             <div v-if="showMobileSearch" class="mobile-search-wrapper">
                 <div class="mobile-search">
                     <img
-                        src="/assets/images/header/search.svg"
+                        src="/assets/icons/header/search.svg"
                         alt="search"
                         class="search-icon"
                     />

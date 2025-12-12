@@ -98,19 +98,19 @@
 
             <div class="social-media-icons">
                 <NuxtLink to="#"
-                    ><img src="/assets/icons/facebook.svg" alt="facebook"
+                    ><img src="/assets/icons/footer/facebook.svg" alt="facebook"
                 /></NuxtLink>
                 <NuxtLink to="#"
-                    ><img src="/assets/icons/twiter.svg" alt="twiter"
+                    ><img src="/assets/icons/footer/twiter.svg" alt="twiter"
                 /></NuxtLink>
                 <NuxtLink to="#"
-                    ><img src="/assets/icons/instagram.svg" alt="instagram"
+                    ><img src="/assets/icons/footer/instagram.svg" alt="instagram"
                 /></NuxtLink>
                 <NuxtLink to="#"
-                    ><img src="/assets/icons/youtube.svg" alt="youtube"
+                    ><img src="/assets/icons/footer/youtube.svg" alt="youtube"
                 /></NuxtLink>
                 <NuxtLink to="#"
-                    ><img src="/assets/icons/pinterest.svg" alt="pinterest"
+                    ><img src="/assets/icons/footer/pinterest.svg" alt="pinterest"
                 /></NuxtLink>
             </div>
         </div>

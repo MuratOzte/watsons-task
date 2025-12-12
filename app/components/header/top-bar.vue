@@ -4,7 +4,7 @@
             <div class="left-buttons">
                 <button>
                     <img
-                        src="/assets/images/header/stores.svg"
+                        src="/assets/icons/header/stores.svg"
                         alt="Top-bar-stores"
                         width="18"
                         height="14"
@@ -13,7 +13,7 @@
                 </button>
                 <button>
                     <img
-                        src="/assets/images/header/catalog.svg"
+                        src="/assets/icons/header/catalog.svg"
                         alt="Top-bar-catalog"
                         width="18"
                         height="14"
@@ -27,7 +27,7 @@
             <div class="call-us">
                 <a href="tel:+908501234567"
                     >Call us:(+90) 850 123 45 67<img
-                        src="/assets/images/header/phone.svg"
+                        src="/assets/icons/header/phone.svg"
                         alt="phone"
                 /></a>
             </div>
