@@ -1,8 +1,8 @@
 <template>
     <header>
-        <HeaderTopBar />
-        <HeaderMid />
-        <HeaderMenu />
+        <LayoutHeaderTopBar />
+        <LayoutHeaderMid />
+        <LayoutHeaderMenu />
     </header>
 </template>
 

@@ -8,7 +8,7 @@
             </div>
 
             <div class="products-section">
-                <ProductsProduct
+                <HomeProductsProduct
                     v-for="product in products"
                     :key="product.id"
                     :image="product.thumbnail"

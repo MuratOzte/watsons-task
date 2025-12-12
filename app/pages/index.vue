@@ -1,11 +1,11 @@
 <template>
-    <Header />
-    <Hero />
-    <Products />
-    <Newsletter />
-    <Banner />
-    <Categories />
-    <Footer />
+    <LayoutHeader />
+    <HomeHero />
+    <HomeProducts />
+    <HomeNewsletter />
+    <HomeBanner />
+    <HomeCategories />
+    <LayoutFooter />
 </template>
 
 <script setup></script>

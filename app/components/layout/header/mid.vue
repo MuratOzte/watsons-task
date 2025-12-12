@@ -44,7 +44,7 @@
 
             <div class="mobile-section">
                 <button @click="toggleMobileSearch">
-                    <img src="/assets/icons/header/search.svg" alt="search" />
+                    <img src="/assets/icons/search.svg" alt="search" />
                 </button>
                 <button class="cart">
                     <img
@@ -64,7 +64,7 @@
             <div v-if="showMobileSearch" class="mobile-search-wrapper">
                 <div class="mobile-search">
                     <img
-                        src="/assets/icons/header/search.svg"
+                        src="/assets/icons/search.svg"
                         alt="search"
                         class="search-icon"
                     />

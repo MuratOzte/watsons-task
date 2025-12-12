@@ -7,19 +7,19 @@
                 <div class="divider"></div>
             </div>
             <div class="categories-section">
-                <CategoriesCategory
+                <HomeCategoriesCategory
                     :background-image="personalCare"
                     title="Personal Care"
                 />
-                <CategoriesCategory
+                <HomeCategoriesCategory
                     :background-image="skinCare"
                     title="Skin Care"
                 />
-                <CategoriesCategory
+                <HomeCategoriesCategory
                     :background-image="makeUp"
                     title="Make-Up"
                 />
-                <CategoriesCategory
+                <HomeCategoriesCategory
                     :background-image="motherBaby"
                     title="Mother & Baby"
                 />

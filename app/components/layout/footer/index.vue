@@ -1,7 +1,7 @@
 <template>
     <div class="footer-wrapper">
         <footer>
-            <FooterColumn
+            <LayoutFooterColumn
                 title="Corporate"
                 :items="[
                     { label: 'About us', to: '#' },
@@ -11,7 +11,7 @@
                 ]"
             />
 
-            <FooterColumn
+            <LayoutFooterColumn
                 title="Shopping"
                 :items="[
                     { label: 'Order and Payment', to: '#' },
@@ -21,7 +21,7 @@
                 ]"
             />
 
-            <FooterColumn
+            <LayoutFooterColumn
                 title="Legal"
                 :items="[
                     { label: 'Terms of Use', to: '#' },
@@ -31,7 +31,7 @@
                 ]"
             />
 
-            <FooterColumn
+            <LayoutFooterColumn
                 title="Help Center"
                 :items="[
                     { label: 'FAQ', to: '#' },

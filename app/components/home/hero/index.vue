@@ -17,7 +17,7 @@
             :name="direction === 'next' ? 'slide-left' : 'slide-right'"
             mode="out-in"
         >
-            <HeroBanner
+            <HomeHeroBanner
                 :key="currentSlide.id"
                 :caps-title="currentSlide.capsTitle"
                 :title="currentSlide.title"
@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { computed, ref } from 'vue';
 import heroImage from '~/assets/images/hero/right-part.png';
 
 const slides = [
