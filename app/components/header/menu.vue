@@ -55,4 +55,9 @@ const menuItems = [
     color: #2A2A48;
     line-height: 16px;
 }
+@media (max-width: 960px) {
+    .menu{
+        display: none;
+    }
+}
 </style>

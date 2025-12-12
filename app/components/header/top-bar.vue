@@ -25,13 +25,15 @@
                 Watsons Beauty and Personal Care Awards Nominees!
             </p>
             <div class="call-us">
-                <p>Call us:(+90) 850 123 45 67</p>
-                <img src="/assets/images/header/phone.svg" alt="phone" />
+                <a href="tel:+908501234567"
+                    >Call us:(+90) 850 123 45 67<img
+                        src="/assets/images/header/phone.svg"
+                        alt="phone"
+                /></a>
             </div>
         </div>
     </div>
 </template>
-
 
 <style scoped>
 .top-bar {
@@ -86,4 +88,25 @@
     font-size: 14px;
     gap: 8px;
 }
+a {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+@media (max-width: 960px) {
+    .spot-text{
+        display: none;
+    }
+    a{
+        font-size: 0;
+    }
+    .left-buttons{
+        gap: 32px;
+    }
+}
+
+
 </style>

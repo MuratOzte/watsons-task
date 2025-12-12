@@ -79,4 +79,7 @@ button {
     margin-top: 8px;
     cursor: pointer;
 }
+.category:hover {
+    box-shadow: 0px -6px 30px 0px #0000000f;
+}
 </style>
