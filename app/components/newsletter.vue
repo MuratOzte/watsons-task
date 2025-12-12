@@ -80,4 +80,17 @@ button {
     text-transform: uppercase;
     color: #FFFFFF;
 }
+@media (max-width: 760px) {
+    .container{
+        flex-direction: column;
+        width: 100%;
+        display: block;
+    }
+    .left-side{
+        margin-bottom: 16px;
+    }
+    .right-side{
+        flex: 1;
+    }
+}
 </style>

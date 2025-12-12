@@ -18,7 +18,7 @@
         </div>
         <div class="mobile-button-container">
             <div class="h-divider"></div>
-            <button class="mobile-button" >
+            <button class="mobile-button">
                 <img src="/assets/icons/add-cart.svg" alt="basket" />Add
             </button>
         </div>
@@ -44,7 +44,6 @@ const props = defineProps({
 
 <style scoped>
 .product {
-    height: 400px;
     display: flex;
     flex-direction: column;
     border-radius: 6px;
@@ -81,8 +80,6 @@ img {
     color: #485363;
 }
 
-
-
 .button-panel {
     background-color: #000000cc;
     position: absolute;
@@ -94,26 +91,25 @@ img {
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(8px);
+    transform: translateY(-40px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
 
 .divider {
     height: 32px;
     width: 0.5px;
-    margin: 0 24px;
     background-color: #ececec;
     opacity: 0.2;
 }
 
-.h-divider{
+.h-divider {
     width: 100%;
     height: 1px;
-    background-color: #ECECEC;
+    background-color: #ececec;
 }
 
 .row {
-    padding: 16px;
+    padding: 8px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,30 +136,34 @@ button {
 .product:hover .button-panel {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(-60px);
+}
+.mobile-button-container {
+    display: none;
 }
 
 @media (max-width: 960px) {
     .button-panel {
         display: none;
     }
-    .container{
+    .container {
         padding: 16px;
     }
     .product {
         margin: 16px 0;
         display: flex;
+        height: 400px;
         justify-content: space-between;
     }
-    .mobile-button-container{
+    .mobile-button-container {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
-    .mobile-button{
+    .mobile-button {
         padding: 0 16px;
         border-radius: 4px;
-        background-color: #FF27AD;
+        background-color: #ff27ad;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -171,12 +171,11 @@ button {
         height: 32px;
         margin: 16px;
     }
-    .mobile-button img{
+    .mobile-button img {
         width: 16px;
         height: 16px;
         display: flex;
         background-color: transparent;
     }
-
 }
 </style>

@@ -123,4 +123,75 @@ button {
     bottom: -55px;
     left: 250px;
 }
+
+@media (max-width: 850px) {
+    .nivea2 {
+        position: absolute;
+        width: 416px;
+        height: 232px;
+        right: 180px;
+        top: 55px;
+    }
+
+    .nivea {
+        position: absolute;
+        width: 240px;
+        height: 236px;
+        bottom: -20px;
+        left: 250px;
+    }
+}
+
+@media (max-width: 700px) {
+    .banner {
+        height: 514px;
+        overflow: hidden;
+    }
+    .main-box {
+        top: 230px;
+    }
+    .nivea {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 90%;
+        width: 250px;
+        height: 248px;
+    }
+    .nivea2 {
+        width: 250px;
+        height: 140px;
+        left: 45%;
+        top: 40%;
+    }
+    .title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+    }
+    .title span {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+    }
+    .discount span {
+        font-family: Rubik;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 48px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+    }
+    .discount {
+        font-family: Rubik;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+        vertical-align: middle;
+    }
+}
 </style>

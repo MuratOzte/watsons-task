@@ -42,7 +42,7 @@ onMounted(async () => {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin: 40px 0px;
 }
 .container {
     width: 80%;
