@@ -126,6 +126,10 @@ const emit = defineEmits(['goTo']);
     font-size: 14px;
     cursor: pointer;
 }
+.shop-btn:hover {
+    background-color: #f1129c;
+    transition: all 0.2s ease;
+}
 .progress-bar {
     display: flex;
     align-items: center;

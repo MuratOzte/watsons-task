@@ -16,6 +16,12 @@
             <p class="price">{{ price }} TL</p>
             <p class="title">{{ title }}</p>
         </div>
+        <div class="mobile-button-container">
+            <div class="h-divider"></div>
+            <button class="mobile-button" >
+                <img src="/assets/icons/add-cart.svg" alt="basket" />Add
+            </button>
+        </div>
     </div>
 </template>
 
@@ -38,17 +44,18 @@ const props = defineProps({
 
 <style scoped>
 .product {
+    height: 400px;
     display: flex;
     flex-direction: column;
     border-radius: 6px;
     border: 1px solid #ececec80;
     box-shadow: 0px 1px 8px 0px #0000000a;
-    margin: 40px 0px;
     flex: 1;
     position: relative;
 }
 .container {
     padding: 32px;
+    height: 128px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -62,12 +69,19 @@ img {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+    margin-bottom: 8px;
+    color: #2a2a48;
 }
 .title {
-    font-size: 16px;
     font-weight: 400;
+    font-size: 16px;
     line-height: 24px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #485363;
 }
+
+
 
 .button-panel {
     background-color: #000000cc;
@@ -90,6 +104,12 @@ img {
     margin: 0 24px;
     background-color: #ececec;
     opacity: 0.2;
+}
+
+.h-divider{
+    width: 100%;
+    height: 1px;
+    background-color: #ECECEC;
 }
 
 .row {
@@ -121,5 +141,42 @@ button {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+@media (max-width: 960px) {
+    .button-panel {
+        display: none;
+    }
+    .container{
+        padding: 16px;
+    }
+    .product {
+        margin: 16px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .mobile-button-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-button{
+        padding: 0 16px;
+        border-radius: 4px;
+        background-color: #FF27AD;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        height: 32px;
+        margin: 16px;
+    }
+    .mobile-button img{
+        width: 16px;
+        height: 16px;
+        display: flex;
+        background-color: transparent;
+    }
+
 }
 </style>

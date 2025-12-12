@@ -74,15 +74,26 @@ onMounted(async () => {
     margin-top: 32px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 960px) {
     .products-section {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        row-gap: 8px;
     }
-}
-
-@media (max-width: 640px) {
+    .container {
+        width: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+    .title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+    }
     .products-section {
-        grid-template-columns: 1fr;
+        margin-top: 16px;
     }
 }
 </style>
