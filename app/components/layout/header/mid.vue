@@ -79,7 +79,7 @@
 
         <Transition name="mobile-menu">
             <div v-if="showMenu" class="mobile-menu-overlay">
-                <HeaderMobileMenu @close="showMenu = false" />
+                <LayoutHeaderMobileMenu @close="showMenu = false" />
             </div>
         </Transition>
     </div>
@@ -223,8 +223,8 @@ button {
     background-color: #fa4c44;
     color: white;
     position: absolute;
-    left: 16px;
-    bottom: 4px;
+    left: 12px;
+    bottom: 16px;
     border-radius: 99px;
     text-align: center;
     font-weight: 700;
