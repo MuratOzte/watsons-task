@@ -72,14 +72,14 @@
                             aria-label="Back"
                             @click="activeIndex = null"
                         >
+                            <div class="subTitle">{{ activeItem?.label }}</div>
                             <img
-                                src="/assets/icons/mobile-menu/left.svg"
+                                src="/assets/icons/mobile-menu/right.svg"
                                 alt=""
                                 aria-hidden="true"
+                                class="right-button"
                             />
                         </button>
-                        <div class="subTitle">{{ activeItem?.label }}</div>
-                        <div class="spacer" />
                     </div>
 
                     <nav class="bottom-section" aria-label="Sub categories">
@@ -291,12 +291,11 @@ function go(path) {
 }
 
 .iconBtn {
-    width: 24px;
-    height: 24px;
     border: 0;
     background: transparent;
     cursor: pointer;
     display: flex;
+    gap: 16px;
     align-items: center;
     justify-content: center;
     margin-left: 24px;
@@ -370,8 +369,9 @@ function go(path) {
 
 .subHeader {
     height: 56px;
-    display: grid;
-    grid-template-columns: 56px 1fr 56px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
     align-items: center;
     border-bottom: 1px solid #eee;
     background: #fff;
@@ -384,9 +384,17 @@ function go(path) {
     padding: 0 10px;
 }
 
-.spacer {
-    width: 56px;
-    height: 56px;
+.rowText--child {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #485363;
+    border-bottom: none;
+}
+
+.right-button {
+    margin-right: 16px;
 }
 
 .slide-enter-active,
