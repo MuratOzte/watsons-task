@@ -6,19 +6,36 @@
             <CheckoutShippingDetails />
             <CheckoutPaymentDetails />
         </div>
+        <CheckoutSummary />
     </div>
     <LayoutFooter />
 </template>
 
 <style scoped>
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    margin: 32px 0;
+    max-width: 1140px; /* tasarımdaki gibi ortala */
+    margin: 32px auto;
+    padding: 0 24px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px; /* sol + sağ */
+    gap: 32px;
+    align-items: start;
 }
+
 .inner-container {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* shipping - payment arası */
+}
+
+/* mobil */
+@media (max-width: 960px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 12px;
+    }
 }
 </style>

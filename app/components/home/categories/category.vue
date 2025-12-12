@@ -54,6 +54,11 @@ const props = defineProps({
     border-radius: 6px;
     padding: 16px;
     text-align: center;
+    transition: background-color 0.3s ease; 
+}
+
+.category:hover .inner-box {
+    background-color: #ffffff;
 }
 h1 {
     font-weight: 700;
@@ -82,12 +87,12 @@ button {
     box-shadow: 0px -6px 30px 0px #0000000f;
     transition: all 0.3s ease;
 }
-button:hover{
-    background-color: #138A96;
+button:hover {
+    background-color: #138a96;
     transition: all 0.3s ease;
 }
 @media (max-width: 960px) {
-    .category{
+    .category {
         padding: 40px;
     }
 }

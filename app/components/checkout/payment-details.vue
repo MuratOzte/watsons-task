@@ -53,12 +53,12 @@
                     <div class="field">
                         <div class="label-row">
                             <label for="cvv">CVV *</label>
-                            <span
-                                class="info"
-                                title="3 or 4 digits on the back of your card"
-                                >?</span
-                            >
                         </div>
+                        <img
+                            src="/assets/icons/checkout/help.svg"
+                            alt="help"
+                            class="help-icon"
+                        />
                         <input
                             id="cvv"
                             type="text"
@@ -239,6 +239,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    position: relative;
 }
 
 label {
@@ -246,6 +247,14 @@ label {
     font-size: 14px;
     line-height: 24px;
     color: #2a2a48;
+}
+
+.help-icon{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 21px;
+    top: 50px;
 }
 
 .label-row {
@@ -339,7 +348,7 @@ textarea {
     width: 32px;
     height: 24px;
     display: block;
-    background-color: #FFE07D;
+    background-color: #ffe07d;
 }
 
 .card--back {

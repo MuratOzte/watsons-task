@@ -27,6 +27,10 @@
                     id="phone"
                     type="tel"
                     name="phone"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    maxlength="13"
+                    autocomplete="off"
                     placeholder="+90 (5__)___ __ __"
                 />
             </div>
@@ -133,7 +137,7 @@ label {
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0px;
-    color: #2A2A48;
+    color: #2a2a48;
 }
 
 input,

@@ -25,7 +25,7 @@ const menuItems = [
 ];
 </script>
 
-<style>
+<style scoped>
 .menu {
     width: 100%;
     display: flex;
