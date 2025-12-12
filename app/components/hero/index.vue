@@ -1,10 +1,15 @@
 <template>
-    <div class="hero">
+    <div
+        class="hero"
+        @touchstart.passive="onTouchStart"
+        @touchmove.passive="onTouchMove"
+        @touchend="onTouchEnd"
+    >
         <button class="left-button" @click="prevSlide" :disabled="isFirstSlide">
             <img src="/assets/images/hero/left.svg" alt="hero-left-button" />
         </button>
 
-        <button class="right-button" @click="nextSlide" :disabled="isLastSlide" >
+        <button class="right-button" @click="nextSlide" :disabled="isLastSlide">
             <img src="/assets/images/hero/right.svg" alt="hero-right-button" />
         </button>
 
@@ -18,10 +23,9 @@
                 :title="currentSlide.title"
                 :paragraph="currentSlide.paragraph"
                 :image-src="heroImage"
-                image-alt="product-hero"
-                :button-text="currentSlide.buttonText"
                 :active-index="currentIndex"
                 :total-slides="slides.length"
+                @goTo="goToSlide"
             />
         </Transition>
     </div>
@@ -79,6 +83,42 @@ const prevSlide = () => {
     }
 };
 
+const goToSlide = (targetIndex) => {
+    if (targetIndex === currentIndex.value) return;
+
+    direction.value = targetIndex > currentIndex.value ? 'next' : 'prev';
+    currentIndex.value = targetIndex;
+};
+
+const startX = ref(0);
+const startY = ref(0);
+const lastX = ref(0);
+const lastY = ref(0);
+
+const onTouchStart = (e) => {
+    const t = e.touches[0];
+    startX.value = t.clientX;
+    startY.value = t.clientY;
+    lastX.value = t.clientX;
+    lastY.value = t.clientY;
+};
+
+const onTouchMove = (e) => {
+    const t = e.touches[0];
+    lastX.value = t.clientX;
+    lastY.value = t.clientY;
+};
+
+const onTouchEnd = () => {
+    const dx = lastX.value - startX.value;
+    const dy = lastY.value - startY.value;
+
+    if (Math.abs(dx) <= Math.abs(dy)) return;
+
+    const THRESHOLD = 50; 
+    if (dx <= -THRESHOLD) nextSlide(); 
+    if (dx >= THRESHOLD) prevSlide(); 
+};
 </script>
 
 <style scoped>
@@ -87,7 +127,7 @@ button {
     border: none;
     cursor: pointer;
 }
-button:disabled img{
+button:disabled img {
     opacity: 0.5;
 }
 
@@ -101,7 +141,6 @@ button:disabled img{
             #f2f0ff 90.91%
         );
     width: 100%;
-    height: 400px;
     position: relative;
     overflow: hidden;
 }
@@ -160,5 +199,14 @@ button:disabled img{
 .slide-right-leave-to {
     transform: translateX(100%);
     opacity: 0;
+}
+@media (max-width: 960px) {
+    .left-button {
+        display: none;
+    }
+    .right-button {
+        right: 12px;
+        display: none;
+    }
 }
 </style>

@@ -11,19 +11,25 @@
                 <p class="paragraph">
                     {{ paragraph }}
                 </p>
-                <button class="shop-btn">
-                    {{ buttonText }}
-                </button>
+                <button class="shop-btn">Shop Now</button>
                 <div class="progress-bar">
                     <div
                         v-for="n in totalSlides"
                         :key="n"
                         :class="['progress', { active: n - 1 === activeIndex }]"
+                        role="button"
+                        tabindex="0"
+                        @click="emit('goTo', n - 1)"
+                        @keydown.enter="emit('goTo', n - 1)"
+                        @keydown.space.prevent="emit('goTo', n - 1)"
                     ></div>
                 </div>
             </div>
 
             <div class="img-section">
+                <img :src="imageSrc" :alt="imageAlt" class="right-part-image" />
+            </div>
+            <div class="img-section-mobile">
                 <img :src="imageSrc" :alt="imageAlt" class="right-part-image" />
             </div>
         </div>
@@ -52,10 +58,6 @@ const props = defineProps({
         type: String,
         default: 'product-hero',
     },
-    buttonText: {
-        type: String,
-        default: 'Shop Now',
-    },
     activeIndex: {
         type: Number,
         default: 0,
@@ -64,7 +66,11 @@ const props = defineProps({
         type: Number,
         default: 3,
     },
+    activeIndex: { type: Number, default: 0 },
+    totalSlides: { type: Number, default: 3 },
 });
+
+const emit = defineEmits(['goTo']);
 </script>
 
 <style scoped>
@@ -144,5 +150,58 @@ const props = defineProps({
     width: 100%;
     height: 100%;
     object-fit: fill;
+}
+.img-section-mobile {
+    display: none;
+}
+@media (max-width: 960px) {
+    .container {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .img-section {
+        display: none;
+    }
+    .img-section-mobile {
+        display: flex;
+        width: 90%;
+    }
+    .img-section-mobile img {
+        margin: 16px;
+    }
+    .text-section {
+        width: 90%;
+        margin: 16px;
+        box-sizing: content-box;
+    }
+    .caps-title {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        text-transform: uppercase;
+    }
+    .title {
+        font-family: Rubik;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+        vertical-align: middle;
+    }
+    .paragraph {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+    }
+    .shop-btn {
+        width: 100%;
+    }
+    .progress-bar {
+        justify-content: center;
+    }
 }
 </style>
