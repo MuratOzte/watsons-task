@@ -39,7 +39,6 @@ const props = defineProps({
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 280px;
     box-shadow: 0px 1px 8px 0px #0000000a;
     border: 1px solid #ececec80;
     border-radius: 6px;
@@ -81,5 +80,15 @@ button {
 }
 .category:hover {
     box-shadow: 0px -6px 30px 0px #0000000f;
+    transition: all 0.3s ease;
+}
+button:hover{
+    background-color: #138A96;
+    transition: all 0.3s ease;
+}
+@media (max-width: 960px) {
+    .category{
+        padding: 40px;
+    }
 }
 </style>

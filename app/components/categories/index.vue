@@ -53,6 +53,8 @@ import skinCare from '~/assets/images/categories/skin-care.jpg';
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 .title {
     font-weight: 500;
@@ -60,12 +62,21 @@ import skinCare from '~/assets/images/categories/skin-care.jpg';
     line-height: 32px;
     color: #0099a8;
     margin: 0 32px;
-    margin-bottom: 40px;
 }
 .categories-section {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        width: 70%;
+    }
+
+    .categories-section {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 640px) {
@@ -75,6 +86,13 @@ import skinCare from '~/assets/images/categories/skin-care.jpg';
 
     .categories-section {
         grid-template-columns: 1fr;
+    }
+    .title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        vertical-align: middle;
     }
 }
 </style>

@@ -79,6 +79,7 @@ button {
     vertical-align: middle; 
     text-transform: uppercase;
     color: #FFFFFF;
+    cursor: pointer;
 }
 @media (max-width: 760px) {
     .container{
