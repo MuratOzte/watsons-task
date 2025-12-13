@@ -116,6 +116,7 @@ button {
     width: 519px;
     height: 292px;
     right: 150px;
+    z-index: -1;
 }
 
 .nivea {

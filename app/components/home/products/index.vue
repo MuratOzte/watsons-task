@@ -21,20 +21,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+const { fetchFeatured } = useProducts();
 
-const products = ref([]);
-
-onMounted(async () => {
-    try {
-        const res = await fetch('https://dummyjson.com/products?limit=4');
-        const data = await res.json();
-        // data.products içinden 4 ürün geliyor
-        products.value = data.products;
-    } catch (e) {
-        console.error('Products fetch error:', e);
-    }
-});
+const { data: products } = fetchFeatured();
 </script>
 
 <style scoped>

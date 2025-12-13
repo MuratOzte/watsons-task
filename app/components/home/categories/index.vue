@@ -69,7 +69,7 @@ import skinCare from '~/assets/images/categories/skin-care.jpg';
     gap: 40px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .container {
         width: 70%;
     }
