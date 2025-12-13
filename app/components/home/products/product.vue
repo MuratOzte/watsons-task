@@ -63,7 +63,7 @@ const props = defineProps({
     flex-direction: column;
     align-items: start;
     z-index: 5;
-    padding: auto;
+    padding: 32px;
 }
 
 img {
