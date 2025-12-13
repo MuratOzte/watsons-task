@@ -1,6 +1,7 @@
 <template>
     <div class="product">
         <img :src="image" :alt="title" />
+
         <div class="button-panel">
             <div class="row">
                 <img src="/assets/icons/eye.svg" alt="view" />
@@ -12,10 +13,12 @@
                 <button>Add</button>
             </div>
         </div>
+
         <div class="container">
             <p class="price">{{ price }} TL</p>
             <p class="title">{{ title }}</p>
         </div>
+
         <div class="mobile-button-container">
             <div class="h-divider"></div>
             <button class="mobile-button">
@@ -52,6 +55,7 @@ const props = defineProps({
     flex: 1;
     position: relative;
 }
+
 .container {
     padding: 32px;
     height: 128px;
@@ -66,6 +70,7 @@ img {
     height: 184px;
     background-color: #ececec29;
 }
+
 .price {
     font-weight: 700;
     font-size: 20px;
@@ -73,6 +78,7 @@ img {
     margin-bottom: 8px;
     color: #2a2a48;
 }
+
 .title {
     font-weight: 400;
     font-size: 16px;
@@ -86,14 +92,18 @@ img {
     background-color: #000000cc;
     position: absolute;
     width: 100%;
-    bottom: 120px;
+
+    left: 0;
+    right: 0;
+    bottom: 184px;
+
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-55px);
+    transform: translateY(5px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
 
@@ -138,8 +148,9 @@ button {
 .product:hover .button-panel {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-60px);
+    transform: translateY(0);
 }
+
 .mobile-button-container {
     display: none;
 }
@@ -148,20 +159,24 @@ button {
     .button-panel {
         display: none;
     }
+
     .container {
         padding: 16px;
     }
+
     .product {
         margin: 16px 0;
         display: flex;
         height: 400px;
         justify-content: space-between;
     }
+
     .mobile-button-container {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
+
     .mobile-button {
         padding: 0 16px;
         border-radius: 4px;
@@ -173,6 +188,7 @@ button {
         height: 32px;
         margin: 16px;
     }
+
     .mobile-button img {
         width: 16px;
         height: 16px;
