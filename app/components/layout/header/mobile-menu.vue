@@ -378,10 +378,13 @@ function go(path) {
 }
 
 .subTitle {
-    text-align: center;
-    font-weight: 600;
-    color: #1f1f1f;
-    padding: 0 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: right;
+    vertical-align: middle;
+    color: #2A2A48;
 }
 
 .rowText--child {
