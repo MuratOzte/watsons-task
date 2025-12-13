@@ -85,7 +85,6 @@ const prevSlide = () => {
 
 const goToSlide = (targetIndex) => {
     if (targetIndex === currentIndex.value) return;
-
     direction.value = targetIndex > currentIndex.value ? 'next' : 'prev';
     currentIndex.value = targetIndex;
 };
@@ -115,18 +114,25 @@ const onTouchEnd = () => {
 
     if (Math.abs(dx) <= Math.abs(dy)) return;
 
-    const THRESHOLD = 50; 
-    if (dx <= -THRESHOLD) nextSlide(); 
-    if (dx >= THRESHOLD) prevSlide(); 
+    const THRESHOLD = 50;
+    if (dx <= -THRESHOLD) nextSlide();
+    if (dx >= THRESHOLD) prevSlide();
 };
 </script>
 
 <style scoped>
+/* base button */
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
 }
+
+button:disabled {
+    cursor: not-allowed;
+}
+
 button:disabled img {
     opacity: 0.5;
 }
@@ -145,21 +151,38 @@ button:disabled img {
     overflow: hidden;
 }
 
+/* nav buttons */
+.left-button,
 .right-button {
     position: absolute;
-    right: 28px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-}
-.left-button {
-    position: absolute;
-    left: 28px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
 }
 
+.left-button {
+    left: 28px;
+}
+
+.right-button {
+    right: 28px;
+}
+
+/* hover only when enabled */
+.left-button:not(:disabled):hover,
+.right-button:not(:disabled):hover {
+    background-color: #ececec;
+}
+
+/* slide transitions */
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
@@ -200,13 +223,15 @@ button:disabled img {
     transform: translateX(100%);
     opacity: 0;
 }
+
 @media (max-width: 960px) {
-    .left-button {
+    .left-button,
+    .right-button {
         display: none;
     }
+
     .right-button {
         right: 12px;
-        display: none;
     }
 }
 </style>

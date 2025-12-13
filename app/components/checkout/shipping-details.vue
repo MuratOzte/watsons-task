@@ -109,6 +109,7 @@ watch(city, () => {
     border-radius: 4px;
     width: 32px;
     height: 32px;
+    padding: 16px;
 }
 
 h1 {
@@ -130,6 +131,8 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
+    padding: 0 16px;
 }
 
 label {
@@ -142,6 +145,7 @@ label {
 
 input,
 textarea {
+    box-sizing: border-box;
     border: 1px solid #ececec;
     border-radius: 4px;
     padding: 16px;
@@ -164,6 +168,13 @@ textarea {
 
     .field--full {
         grid-column: auto;
+    }
+    .title {
+        background-color: #ececec4d;
+        padding: 20px 12px;
+        width: 100vw;
+        margin-left: -12px;
+        margin-right: -12px;
     }
 }
 </style>

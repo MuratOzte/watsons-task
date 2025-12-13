@@ -54,11 +54,13 @@
                         <div class="label-row">
                             <label for="cvv">CVV *</label>
                         </div>
+
                         <img
                             src="/assets/icons/checkout/help.svg"
                             alt="help"
                             class="help-icon"
                         />
+
                         <input
                             id="cvv"
                             type="text"
@@ -80,36 +82,44 @@
                 </button>
             </div>
 
-            <div class="preview">
-                <div class="card card--front">
-                    <!-- chip sağ tarafa -->
-                    <div class="card-top">
-                        <img
-                            class="chip-img"
-                            src="/assets/icons/checkout/chip.svg"
-                            alt="chip"
-                        />
-                    </div>
-
-                    <div class="card-number">{{ previewCardNumber }}</div>
-
-                    <div class="card-bottom">
-                        <!-- "Card Holder" yazan yerde isim gözüksün -->
-                        <div class="card-col">
-                            <div class="muted">{{ previewCardHolder }}</div>
+            <div class="parent">
+                <div class="preview">
+                    <div class="card card--front">
+                        <div class="card-top">
+                            <img
+                                class="chip-img"
+                                src="/assets/icons/checkout/chip.svg"
+                                alt="chip"
+                            />
                         </div>
 
-                        <div class="card-col right">
-                            <div class="date">{{ previewExpiry }}</div>
+                        <div class="card-number">{{ previewCardNumber }}</div>
+
+                        <div class="card-bottom">
+                            <div class="card-col">
+                                <div
+                                    :class="isHolderFilled ? 'strong' : 'muted'"
+                                >
+                                    {{ previewCardHolder }}
+                                </div>
+                            </div>
+
+                            <div class="card-col right">
+                                <div
+                                    :class="isExpiryFilled ? 'strong' : 'muted'"
+                                >
+                                    {{ previewExpiry }}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card card--back">
-                    <div class="magnetic"></div>
-                    <div class="cvv-box">
-                        <div class="muted">CVV</div>
-                        <div class="strong">{{ previewCvv }}</div>
+                    <div class="card card--back">
+                        <div class="magnetic"></div>
+                        <div class="cvv-box">
+                            <div class="muted">CVV</div>
+                            <div class="strong">{{ previewCvv }}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,9 +131,9 @@
 import { ref, computed } from 'vue';
 
 const cardHolder = ref('');
-const cardNumberRaw = ref(''); // digits only (max 16)
-const expiryRaw = ref(''); // MMYY digits only (max 4)
-const cvvRaw = ref(''); // 3-4 digits
+const cardNumberRaw = ref('');
+const expiryRaw = ref('');
+const cvvRaw = ref('');
 
 const digitsOnly = (s) => (s || '').replace(/\D/g, '');
 
@@ -163,6 +173,11 @@ const previewCardNumber = computed(() => {
     return formatCardNumber(padded);
 });
 
+const isHolderFilled = computed(
+    () => (cardHolder.value || '').trim().length > 0
+);
+const isExpiryFilled = computed(() => expiryRaw.value.length > 0);
+
 const previewCardHolder = computed(() => {
     const v = (cardHolder.value || '').trim();
     return v.length ? v : 'Card Holder';
@@ -182,7 +197,7 @@ const previewCvv = computed(() => {
 });
 
 const isPayDisabled = computed(() => {
-    const holderOk = cardHolder.value.trim().length > 0;
+    const holderOk = (cardHolder.value || '').trim().length > 0;
     const numberOk = cardNumberRaw.value.length === 16;
     const expiryOk = expiryRaw.value.length === 4;
     const cvvOk = cvvRaw.value.length === 3 || cvvRaw.value.length === 4;
@@ -227,12 +242,22 @@ h1 {
     grid-template-columns: 1fr 340px;
     gap: 32px;
     align-items: start;
+
+    grid-template-areas: 'form preview';
 }
 
 .form {
+    grid-area: form;
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.parent {
+    grid-area: preview;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .field {
@@ -249,30 +274,12 @@ label {
     color: #2a2a48;
 }
 
-.help-icon{
+.help-icon {
     width: 14px;
     height: 14px;
     position: absolute;
-    right: 21px;
+    right: 16px;
     top: 50px;
-}
-
-.label-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.info {
-    width: 18px;
-    height: 18px;
-    border: 1px solid #ececec;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #8493a8;
 }
 
 input,
@@ -322,7 +329,9 @@ textarea {
 
 .preview {
     position: relative;
-    min-height: 220px;
+    min-height: 260px;
+    width: 340px;
+    min-height: 280px; 
 }
 
 .card {
@@ -338,7 +347,6 @@ textarea {
     z-index: 2;
 }
 
-/* chip sağ üst */
 .card-top {
     display: flex;
     justify-content: flex-end;
@@ -394,15 +402,6 @@ textarea {
     color: #8493a8;
 }
 
-.date {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: 0px;
-    vertical-align: middle;
-    color: #485363;
-}
-
 .strong {
     font-size: 12px;
     line-height: 16px;
@@ -428,11 +427,17 @@ textarea {
     .content-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+        grid-template-areas:
+            'preview'
+            'form';
     }
 
     .preview {
-        order: -1;
-        min-height: 200px;
+        min-height: 240px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 40%;
     }
 
     .row-2 {
@@ -440,9 +445,41 @@ textarea {
         gap: 16px;
     }
 
+    .card--front {
+        width: 100%;
+        max-width: 340px;
+        position: absolute;
+    }
+
     .card--back {
-        width: 220px;
-        right: 0;
+        position: absolute;
+        width: 240px;
+        right: -100px;
+    }
+
+    .title {
+        background-color: #ececec4d;
+        padding: 20px 12px;
+        width: 100vw;
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .preview {
+        width: 60%;
+        margin-left: -48px;
+    }
+
+    .card--back {
+        position: absolute;
+        width: 240px;
+        right: -80px;
+    }
+
+    .card-number {
+        font-size: 16px;
     }
 }
 </style>

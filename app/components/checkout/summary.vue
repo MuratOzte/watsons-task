@@ -107,6 +107,7 @@ h1 {
     border-radius: 4px;
     box-shadow: 0px 1px 2px 0px #37415114;
     display: flex;
+    width: 100%;
 }
 .product-image {
     width: 64px;
@@ -119,6 +120,7 @@ h1 {
     display: flex;
     flex-direction: column;
     padding: 8px;
+    flex: 1;
 }
 .sum {
     display: flex;
@@ -143,6 +145,7 @@ h1 {
     vertical-align: middle;
     color: #2a2a48;
     margin-bottom: 8px;
+    word-break: break-all;
 }
 
 .buttons img {

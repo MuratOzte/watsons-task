@@ -107,6 +107,8 @@ button {
     text-align: center;
     vertical-align: middle;
     text-transform: uppercase;
+    cursor: pointer;
+    z-index: 20;
 }
 
 .nivea2 {

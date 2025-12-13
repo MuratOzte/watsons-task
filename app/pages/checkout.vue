@@ -14,12 +14,13 @@
 <style scoped>
 .container {
     width: 100%;
-    max-width: 1140px; /* tasarımdaki gibi ortala */
+    max-width: 1140px; 
     margin: 32px auto;
     padding: 0 24px;
+    box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 360px; /* sol + sağ */
+    grid-template-columns: minmax(0, 1fr) 360px;
     gap: 32px;
     align-items: start;
 }
@@ -27,15 +28,30 @@
 .inner-container {
     display: flex;
     flex-direction: column;
-    gap: 32px; /* shipping - payment arası */
+    gap: 32px;
+    min-width: 0;
 }
 
-/* mobil */
+.container > * {
+    min-width: 0; 
+}
+
 @media (max-width: 960px) {
     .container {
+        max-width: none;
         grid-template-columns: 1fr;
         gap: 24px;
         padding: 0 12px;
+        margin: 32px auto;
+        overflow-x: clip; 
+    }
+
+    .inner-container {
+        order: 2;
+    }
+
+    .container > :last-child {
+        order: 1;
     }
 }
 </style>
