@@ -58,6 +58,8 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     align-items: start;
+    z-index: 5;
+    padding: auto;
 }
 
 img {
@@ -87,11 +89,11 @@ img {
     bottom: 120px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-40px);
+    transform: translateY(-55px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
 

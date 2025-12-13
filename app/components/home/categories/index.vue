@@ -69,13 +69,13 @@ import skinCare from '~/assets/images/categories/skin-care.jpg';
     gap: 40px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .container {
         width: 70%;
     }
 
     .categories-section {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 

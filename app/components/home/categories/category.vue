@@ -12,7 +12,6 @@ const props = defineProps({
         type: String,
         default: 'Browse',
     },
-    // Bu, tam URL veya import ile resolve edilmiş bir string olacak
     backgroundImage: {
         type: String,
         required: true,
