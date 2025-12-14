@@ -132,7 +132,6 @@ h1 {
     flex-direction: column;
     gap: 8px;
     min-width: 0;
-    padding: 0 16px;
 }
 
 label {

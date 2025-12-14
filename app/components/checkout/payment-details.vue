@@ -240,7 +240,7 @@ h1 {
     margin-top: 16px;
     display: grid;
     grid-template-columns: 1fr 340px;
-    gap: 32px;
+    gap: 8px;
     align-items: start;
 
     grid-template-areas: 'form preview';
@@ -332,6 +332,7 @@ textarea {
     min-height: 260px;
     width: 340px;
     min-height: 280px; 
+    margin-top: 64px;
 }
 
 .card {
@@ -345,6 +346,7 @@ textarea {
 .card--front {
     position: relative;
     z-index: 2;
+    max-width: 280px;
 }
 
 .card-top {
@@ -361,7 +363,7 @@ textarea {
 
 .card--back {
     position: absolute;
-    right: -60px;
+    right: -20px;
     top: 65px;
     width: 260px;
     z-index: 1;
@@ -417,6 +419,7 @@ textarea {
 
 .cvv-box {
     padding: 18px;
+    padding-right: 9px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -426,7 +429,7 @@ textarea {
 @media (max-width: 960px) {
     .content-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 12px;
         grid-template-areas:
             'preview'
             'form';
@@ -438,6 +441,7 @@ textarea {
         display: flex;
         justify-content: center;
         width: 40%;
+        margin: 0;
     }
 
     .row-2 {

@@ -6,7 +6,10 @@
             <CheckoutShippingDetails />
             <CheckoutPaymentDetails />
         </div>
-        <CheckoutSummary />
+
+        <div class="summary">
+            <CheckoutSummary />
+        </div>
     </div>
     <LayoutFooter />
 </template>
@@ -14,9 +17,9 @@
 <style scoped>
 .container {
     width: 100%;
-    max-width: 1140px; 
-    margin: 32px auto;
-    padding: 0 24px;
+    max-width: 1140px;
+    margin: 24px auto;
+    padding: 0 0 0 24px;
     box-sizing: border-box;
 
     display: grid;
@@ -33,7 +36,13 @@
 }
 
 .container > * {
-    min-width: 0; 
+    min-width: 0;
+}
+
+.summary {
+    position: sticky;
+    top: 24px;
+    align-self: start; 
 }
 
 @media (max-width: 960px) {
@@ -43,7 +52,7 @@
         gap: 24px;
         padding: 0 12px;
         margin: 32px auto;
-        overflow-x: clip; 
+        overflow-x: clip;
     }
 
     .inner-container {
@@ -52,6 +61,11 @@
 
     .container > :last-child {
         order: 1;
+    }
+
+    .summary {
+        position: static;
+        top: auto;
     }
 }
 </style>
